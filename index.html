@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lee Ah Kim | Portfolio & Computational History</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        nyonyaBlue: '#1B3B6F',
+                        porcelainCyan: '#008B8B',
+                        terracottaTile: '#C85A32',
+                        goldHighlight: '#D4AF37',
+                        goldHover: '#B89028',
+                        creamPaper: '#FDFBF7',
+                        teakWood: '#2C1A11',
+                        seaIndigo: '#0D1B2A',
+                        forestJade: '#1A4314'
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .tile-pattern {
+            background-color: #0D1B2A;
+            background-image: radial-gradient(#D4AF37 0.8px, transparent 0.8px), radial-gradient(#D4AF37 0.8px, #0D1B2A 0.8px);
+            background-size: 24px 24px;
+            background-position: 0 0, 12px 12px;
+        }
+
+        .porcelain-card {
+            background: rgba(253, 251, 247, 0.96);
+            backdrop-filter: blur(12px);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(27, 59, 111, 0.15);
+        }
+
+        .dark-porcelain {
+            background: rgba(13, 27, 42, 0.95);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.35);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0D1B2A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #C85A32;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+    </style>
+</head>
+<body class="bg-creamPaper text-slate-800 font-sans antialiased selection:bg-terracottaTile selection:text-white">
+
+    <!-- TOP NAVIGATION -->
+    <nav class="fixed top-0 left-0 w-full z-50 dark-porcelain text-white border-b-2 border-goldHighlight/40 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-11 h-11 rounded-lg border-2 border-goldHighlight bg-terracottaTile flex items-center justify-center font-serif text-xl font-bold text-goldHighlight shadow-inner">
+                    李
+                </div>
+                <div>
+                    <span class="font-serif text-xl font-bold tracking-wide text-goldHighlight block leading-tight">LEE AH KIM (李亞金)</span>
+                    <span class="text-xs text-slate-300 tracking-wider flex items-center gap-1">
+                        <i class="fa-solid fa-location-dot text-terracottaTile"></i> Bandar Melaka Native • Computational Historian
+                    </span>
+                </div>
+            </div>
+
+            <!-- Desktop Nav Links -->
+            <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                <a href="#about" class="hover:text-goldHighlight transition-colors">About</a>
+                <a href="#encounters" class="hover:text-goldHighlight transition-colors flex items-center gap-1 text-goldHighlight font-bold">
+                    <i class="fa-solid fa-ship"></i> First Encounters
+                </a>
+                <a href="#leadership" class="hover:text-goldHighlight transition-colors">Leadership</a>
+                <a href="#languages" class="hover:text-goldHighlight transition-colors">Languages</a>
+                <a href="#skills" class="hover:text-goldHighlight transition-colors">Skills</a>
+                <a href="#research" class="hover:text-goldHighlight transition-colors">Research</a>
+                <a href="#contact" class="px-4 py-2 bg-terracottaTile hover:bg-goldHover text-white rounded-md text-xs font-bold transition-all shadow-md">
+                    Contact
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menuBtn" class="md:hidden text-goldHighlight text-2xl focus:outline-none" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-seaIndigo border-b border-goldHighlight/30 px-6 py-4 space-y-3">
+            <a href="#about" class="block text-slate-200 hover:text-goldHighlight">About</a>
+            <a href="#encounters" class="block text-goldHighlight font-semibold">First Encounters Game</a>
+            <a href="#leadership" class="block text-slate-200 hover:text-goldHighlight">Leadership & Debate</a>
+            <a href="#languages" class="block text-slate-200 hover:text-goldHighlight">Languages</a>
+            <a href="#skills" class="block text-slate-200 hover:text-goldHighlight">Skills & Tools</a>
+            <a href="#research" class="block text-slate-200 hover:text-goldHighlight">Research Goals</a>
+            <a href="#contact" class="block text-terracottaTile font-bold">Contact</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="pt-28 pb-16 lg:pt-36 lg:pb-24 tile-pattern text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <div class="lg:col-span-8 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-nyonyaBlue/80 border border-goldHighlight/50 text-goldHighlight text-xs font-mono uppercase tracking-wider">
+                        <i class="fa-solid fa-compass"></i> Hainanese Heritage • Bandar Melaka
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-extrabold text-slate-100 leading-tight">
+                        Bridging <span class="text-goldHighlight">Melaka Maritime History</span> with <span class="text-terracottaTile">Sustainable AI</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-300 max-w-2xl font-normal leading-relaxed">
+                        Target Program: Undergraduate and Postgraduate Applications in Digital Humanities, Sustainable AI, Computational History, or Computer Science.
+                    </p>
+
+                    <!-- Quick Details Badges -->
+                    <div class="flex flex-wrap gap-3 pt-2">
+                        <span class="px-3 py-1.5 rounded bg-white/10 text-xs text-slate-200 border border-white/10 flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-goldHighlight"></i> leeahkimixue@gmail.com
+                        </span>
+                        <span class="px-3 py-1.5 rounded bg-white/10 text-xs text-slate-200 border border-white/10 flex items-center gap-2">
+                            <i class="fa-solid fa-map-pin text-terracottaTile"></i> Bandar Melaka, Malaysia
+                        </span>
+                        <span class="px-3 py-1.5 rounded bg-white/10 text-xs text-slate-200 border border-white/10 flex items-center gap-2">
+                            <i class="fa-solid fa-code text-porcelainCyan"></i> Python and Lightweight Algorithms
+                        </span>
+                    </div>
+
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="#encounters" class="px-6 py-3 bg-terracottaTile hover:bg-goldHover text-white font-bold rounded-lg transition-all shadow-lg flex items-center gap-2">
+                            <i class="fa-solid fa-anchor"></i> Explore First Encounters
+                        </a>
+                        <a href="#contact" class="px-6 py-3 border border-goldHighlight text-goldHighlight hover:bg-goldHighlight hover:text-seaIndigo font-bold rounded-lg transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Contact Me
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cultural Emblem -->
+                <div class="lg:col-span-4 flex justify-center">
+                    <div class="w-64 h-64 sm:w-72 sm:h-72 porcelain-card rounded-2xl p-6 flex flex-col justify-between items-center text-center relative border-4 border-goldHighlight/60">
+                        <div class="text-xs font-serif font-bold tracking-widest text-nyonyaBlue uppercase border-b border-goldHighlight/40 pb-2 w-full">
+                            Peranakan & Hainan Heritage
+                        </div>
+                        <div class="my-auto space-y-2">
+                            <div class="text-5xl text-terracottaTile">
+                                <i class="fa-solid fa-building-columns"></i>
+                            </div>
+                            <div class="font-serif text-xl font-bold text-seaIndigo">Melaka Entrepôt</div>
+                            <p class="text-xs text-slate-600 px-2">
+                                Documenting Historical Encounters via Lightweight Green Computing
+                            </p>
+                        </div>
+                        <div class="text-[10px] text-slate-500 font-mono border-t border-goldHighlight/40 pt-2 w-full">
+                            Singapore English Trained Standard
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- ABOUT ME SECTION -->
+    <section id="about" class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="porcelain-card rounded-2xl p-6 sm:p-10 border-t-4 border-t-nyonyaBlue">
+            <div class="flex items-center space-x-3 mb-6">
+                <span class="w-8 h-8 rounded bg-nyonyaBlue text-white flex items-center justify-center font-bold text-sm">01</span>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-seaIndigo">About Me</h2>
+            </div>
+
+            <div class="prose max-w-none text-slate-700 space-y-4 leading-relaxed text-base">
+                <p class="text-lg font-medium text-nyonyaBlue">
+                    Halo! I am Lee Ah Kim, born and raised in Bandar Melaka.
+                </p>
+                <p>
+                    Growing up right near the Malacca Strait, history is not just something inside dusty textbooks to me, it is right on our doorstep. Every shophouse tile, old riverbank wall, and local dialect here has a story about how foreign traders, colonial powers, and regional empires collided and lived together.
+                </p>
+                <p>
+                    At the same time, I have always been fascinated by modern code. I picked up Python properly to bridge these two worlds. But as much as I love tech and computational methods, I am very cautious about where computing is heading today, especially with modern Large Language Models and heavy AI infrastructure. Training massive models consumes huge amounts of energy, water, and compute power, often at the expense of our environment.
+                </p>
+                <p class="p-4 bg-terracottaTile/10 border-l-4 border-terracottaTile rounded-r text-slate-800 font-medium">
+                    For me, programming and AI should be used smartly, ethically, and sustainably. We should not burn up precious planetary resources just to run inefficient algorithms. My long term academic goal is to work at the intersection of Computational History, Sustainable AI, and Digital Humanities, using lean, green data structures and lightweight models to analyze and preserve history without destroying our future.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE HISTORICAL GAME: FIRST ENCOUNTERS -->
+    <section id="encounters" class="py-16 tile-pattern text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-8 space-y-3">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forestJade text-white text-xs font-mono uppercase tracking-wider">
+                    <i class="fa-solid fa-leaf"></i> Sustainable Client-Side Simulation
+                </div>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-goldHighlight">
+                    First Encounters: Entering the Entrepôt of Melaka
+                </h2>
+                <p class="text-slate-300 text-sm sm:text-base">
+                    15th to 17th Century Port Reception Simulator. Select a foreign delegation arriving at Melaka River mouth. Decide how the local Shahbandar (Harbor Master), local Hainanese traders, and the Sultan greet them.
+                </p>
+            </div>
+
+            <!-- DELEGATION SELECTOR TABS -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 max-w-5xl mx-auto mb-6">
+                <button onclick="switchFleet('ming')" id="tab-ming" class="fleet-tab active-tab p-4 rounded-xl border-2 border-goldHighlight bg-nyonyaBlue text-left transition-all">
+                    <div class="text-xs text-goldHighlight font-mono">1405 AD</div>
+                    <div class="font-serif font-bold text-sm text-white">Ming Dynasty Fleet</div>
+                    <div class="text-[11px] text-slate-300">Zheng He Imperial Armada</div>
+                </button>
+
+                <button onclick="switchFleet('ryukyu')" id="tab-ryukyu" class="fleet-tab p-4 rounded-xl border border-goldHighlight/30 bg-seaIndigo text-left hover:border-goldHighlight transition-all">
+                    <div class="text-xs text-porcelainCyan font-mono">1480 AD</div>
+                    <div class="font-serif font-bold text-sm text-white">Ryukyu Kingdom</div>
+                    <div class="text-[11px] text-slate-300">Okinawan Trade Mission</div>
+                </button>
+
+                <button onclick="switchFleet('gujarat')" id="tab-gujarat" class="fleet-tab p-4 rounded-xl border border-goldHighlight/30 bg-seaIndigo text-left hover:border-goldHighlight transition-all">
+                    <div class="text-xs text-terracottaTile font-mono">1500 AD</div>
+                    <div class="font-serif font-bold text-sm text-white">Gujarati & Arab Traders</div>
+                    <div class="text-[11px] text-slate-300">Spice & Textile Merchants</div>
+                </button>
+
+                <button onclick="switchFleet('portuguese')" id="tab-portuguese" class="fleet-tab p-4 rounded-xl border border-goldHighlight/30 bg-seaIndigo text-left hover:border-goldHighlight transition-all">
+                    <div class="text-xs text-slate-400 font-mono">1509 AD</div>
+                    <div class="font-serif font-bold text-sm text-white">European Expedition</div>
+                    <div class="text-[11px] text-slate-300">Diogo Lopes de Sequeira Fleet</div>
+                </button>
+            </div>
+
+            <!-- GAME VIEWPORT & INTERACTION BOARD -->
+            <div class="dark-porcelain rounded-2xl p-4 sm:p-8 border-2 border-goldHighlight/50 shadow-2xl max-w-5xl mx-auto">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                    
+                    <!-- ANIMATED CANVAS SCENE -->
+                    <div class="lg:col-span-6 space-y-3">
+                        <div class="relative rounded-xl overflow-hidden border-2 border-goldHighlight/40 bg-seaIndigo h-[280px] sm:h-[320px]">
+                            <canvas id="encounterCanvas" class="w-full h-full block"></canvas>
+                            <div class="absolute top-3 left-3 px-3 py-1 rounded bg-seaIndigo/90 border border-goldHighlight/40 text-[11px] font-mono text-goldHighlight">
+                                <span id="canvasFleetTag">Arriving: Ming Fleet</span>
+                            </div>
+                        </div>
+
+                        <!-- Local Dialogue Log -->
+                        <div class="p-4 rounded-xl bg-nyonyaBlue/60 border border-goldHighlight/30 text-xs space-y-2">
+                            <div class="font-mono text-goldHighlight font-bold flex items-center justify-between">
+                                <span>LOCAL LINGUA FRANCA (MELAYU PASAR & HAINANESE)</span>
+                                <i class="fa-solid fa-quote-right"></i>
+                            </div>
+                            <p id="localDialectQuote" class="italic text-slate-200">
+                                "Lihatlah kapal besar dari Negeri China itu! Sultan sudah beri perintah untuk sambut pegawai Cheng Ho."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- INTERACTIVE RECEPTION & CHOICES -->
+                    <div class="lg:col-span-6 space-y-4">
+                        <div class="border-b border-goldHighlight/30 pb-3">
+                            <span id="encounterYear" class="text-xs font-mono text-terracottaTile uppercase">Year 1405 AD</span>
+                            <h3 id="encounterTitle" class="font-serif text-xl sm:text-2xl font-bold text-goldHighlight">
+                                Arrival of Admiral Zheng He
+                            </h3>
+                            <p id="encounterDesc" class="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed">
+                                A massive armada of multi deck Treasure Ships anchors outside Melaka river mouth. They bring silk, celadon porcelain, and imperial royal decrees.
+                            </p>
+                        </div>
+
+                        <!-- Choice Actions -->
+                        <div class="space-y-3">
+                            <div class="text-xs font-mono text-slate-400">CHOOSE LOCAL SHAHBANDAR RECEPTION ACTION:</div>
+                            
+                            <div id="choiceContainer" class="space-y-2">
+                                <!-- Generated dynamically -->
+                            </div>
+                        </div>
+
+                        <!-- Historical Record Card Output -->
+                        <div id="outcomeBox" class="p-4 rounded-xl bg-forestJade/30 border border-forestJade text-xs space-y-2 hidden">
+                            <div class="font-bold text-goldHighlight flex items-center gap-2 font-serif">
+                                <i class="fa-solid fa-scroll"></i> HISTORICAL DOCUMENTATION RECORD
+                            </div>
+                            <p id="outcomeText" class="text-slate-200 leading-relaxed">
+                                ...
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-goldHighlight/20 flex flex-wrap justify-between items-center text-[11px] font-mono text-slate-400 gap-2">
+                    <span><strong>Historical Method:</strong> Reconstructed from Sejarah Melayu and Ryukyu Rekidai Hoan records.</span>
+                    <span class="text-forestJade"><i class="fa-solid fa-leaf"></i> Zero Cloud Server Computation Footprint</span>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- LEADERSHIP, DEBATE & ADVOCACY -->
+    <section id="leadership" class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="porcelain-card rounded-2xl p-6 sm:p-10 border-t-4 border-t-terracottaTile">
+            <div class="flex items-center space-x-3 mb-8">
+                <span class="w-8 h-8 rounded bg-terracottaTile text-white flex items-center justify-center font-bold text-sm">02</span>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-seaIndigo">Leadership, Debate & Advocacy</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <div class="p-6 rounded-xl bg-creamPaper border border-goldHighlight/40 space-y-3">
+                    <div class="w-10 h-10 rounded-lg bg-nyonyaBlue text-goldHighlight flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-seaIndigo">Competitive Debate & Public Speaking</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Extensive training and competition experience in parliamentary and academic debate styles. Skilled in constructing rigorous arguments around technological ethics, environmental policy, and historical analysis.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-xl bg-creamPaper border border-goldHighlight/40 space-y-3">
+                    <div class="w-10 h-10 rounded-lg bg-terracottaTile text-white flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-users-line"></i>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-seaIndigo">Student Council Leadership</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Served multiple terms on the Student Council, leading student initiatives, advocating for campus sustainability, and coordinating multicultural events.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-xl bg-creamPaper border border-goldHighlight/40 space-y-3">
+                    <div class="w-10 h-10 rounded-lg bg-forestJade text-white flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-seaIndigo">Lean Computing over Brute Force AI</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Prioritizing algorithmic efficiency, clean data pre processing, and lightweight local models over unnecessary parameter bloat and resource heavy cloud training.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-xl bg-creamPaper border border-goldHighlight/40 space-y-3">
+                    <div class="w-10 h-10 rounded-lg bg-porcelainCyan text-white flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-seaIndigo">Environmental & Ethical Consciousness</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Advocating for transparency regarding the carbon footprint, water usage, and electronic waste created by AI infrastructure in academic and tech research.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="mt-6 p-4 rounded-xl bg-seaIndigo text-slate-200 text-sm flex items-center gap-3 border border-goldHighlight/30">
+                <i class="fa-solid fa-landmark text-goldHighlight text-xl"></i>
+                <span><strong>Tech for Cultural Preservation:</strong> Ensuring digital humanities projects serve real community heritage rather than tech hype.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- LANGUAGES SPOKEN -->
+    <section id="languages" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="porcelain-card rounded-2xl p-6 sm:p-10 border-t-4 border-t-goldHighlight">
+            <div class="flex items-center space-x-3 mb-6">
+                <span class="w-8 h-8 rounded bg-goldHighlight text-seaIndigo flex items-center justify-center font-bold text-sm">03</span>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-seaIndigo">Languages Spoken & Proficiency</h2>
+            </div>
+
+            <p class="text-sm text-slate-600 mb-8">
+                Being from Melaka with Hainanese roots and having studied under Singaporean English standards, navigating different cultural and linguistic contexts comes naturally to me:
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="p-4 rounded-lg bg-white border border-slate-200 shadow-sm space-y-2">
+                    <div class="flex justify-between items-center">
+                        <span class="font-serif font-bold text-nyonyaBlue">English</span>
+                        <span class="text-xs px-2 py-0.5 rounded bg-nyonyaBlue/10 text-nyonyaBlue font-mono">Academic Standard</span>
+                    </div>
+                    <p class="text-xs text-slate-500">Singapore English trained, formal research writing</p>
+                </div>
+
+                <div class="p-4 rounded-lg bg-white border border-slate-200 shadow-sm space-y-2">
+                    <div class="flex justify-between items-center">
+                        <span class="font-serif font-bold text-terracottaTile">Malay / Bahasa Malaysia</span>
+                        <span class="text-xs px-2 py-0.5 rounded bg-terracottaTile/10 text-terracottaTile font-mono">Native</span>
+                    </div>
+                    <p class="text-xs text-slate-500">Native national language proficiency</p>
+                </div>
+
+                <div class="p-4 rounded-lg bg-white border border-slate-200 shadow-sm space-y-2">
+                    <div class="flex justify-between items-center">
+                        <span class="font-serif font-bold text-porcelainCyan">Indonesian / Bahasa Indonesia</span>
+                        <span class="text-xs px-2 py-0.5 rounded bg-porcelainCyan/10 text-porcelainCyan font-mono">Professional</span>
+                    </div>
+                    <p class="text-xs text-slate-500">Regional trade and historical text comprehension</p>
+                </div>
+
+                <div class="p-4 rounded-lg bg-white border border-slate-200 shadow-sm space-y-2">
+                    <div class="flex justify-between items-center">
+                        <span class="font-serif font-bold text-forestJade">Hainan (Hainanese / 海南话)</span>
+                        <span class="text-xs px-2 py-0.5 rounded bg-forestJade/10 text-forestJade font-mono">Heritage Dialect</span>
+                    </div>
+                    <p class="text-xs text-slate-500">Spoken fluently at home, dialect preservation interest</p>
+                </div>
+
+                <div class="p-4 rounded-lg bg-white border border-slate-200 shadow-sm space-y-2">
+                    <div class="flex justify-between items-center">
+                        <span class="font-serif font-bold text-seaIndigo">Japanese</span>
+                        <span class="text-xs px-2 py-0.5 rounded bg-seaIndigo/10 text-seaIndigo font-mono">JLPT N3 Certified</span>
+                    </div>
+                    <p class="text-xs text-slate-500">Intermediate language qualification passed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS & TOOLS -->
+    <section id="skills" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="porcelain-card rounded-2xl p-6 sm:p-10 border-t-4 border-t-nyonyaBlue">
+            <div class="flex items-center space-x-3 mb-8">
+                <span class="w-8 h-8 rounded bg-nyonyaBlue text-white flex items-center justify-center font-bold text-sm">04</span>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-seaIndigo">Technical Skills & Tools</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 rounded-xl bg-slate-900 text-white space-y-4">
+                    <div class="text-goldHighlight text-2xl"><i class="fa-brands fa-python"></i></div>
+                    <h3 class="font-serif font-bold text-lg text-goldHighlight">Programming Languages</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed font-mono">
+                        Python (Advanced: Data structures, OOP, pandas, NumPy, Flask, script automation, lightweight data optimization)
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-xl bg-slate-900 text-white space-y-4">
+                    <div class="text-terracottaTile text-2xl"><i class="fa-solid fa-code"></i></div>
+                    <h3 class="font-serif font-bold text-lg text-terracottaTile">Web & Interactive Tech</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed font-mono">
+                        HTML5, CSS3, JavaScript, HTML5 Canvas API (for interactive historical simulations without heavy frameworks)
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-xl bg-slate-900 text-white space-y-4">
+                    <div class="text-porcelainCyan text-2xl"><i class="fa-solid fa-database"></i></div>
+                    <h3 class="font-serif font-bold text-lg text-porcelainCyan">Data & Humanities Tools</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed font-mono">
+                        Git/GitHub, Markdown, basic NLP for historical text processing, GIS mapping concepts for regional trade routes
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESEARCH INTERESTS & CERTIFICATIONS -->
+    <section id="research" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <div class="lg:col-span-7 porcelain-card rounded-2xl p-6 sm:p-8 border-t-4 border-t-forestJade space-y-6">
+                <div class="flex items-center space-x-3">
+                    <span class="w-8 h-8 rounded bg-forestJade text-white flex items-center justify-center font-bold text-sm">05</span>
+                    <h2 class="font-serif text-2xl font-bold text-seaIndigo">Academic Goals & Research Interests</h2>
+                </div>
+
+                <ul class="space-y-4 text-sm text-slate-700">
+                    <li class="p-4 rounded-lg bg-creamPaper border border-slate-200">
+                        <strong class="text-seaIndigo font-serif block mb-1">1. Sustainable Digital Humanities</strong>
+                        Utilizing lightweight Python scripts to parse and categorize multi lingual archival trade records across Malay, Dutch, and Japanese sources without excessive compute overhead.
+                    </li>
+                    <li class="p-4 rounded-lg bg-creamPaper border border-slate-200">
+                        <strong class="text-seaIndigo font-serif block mb-1">2. Green AI & Algorithmic Efficiency in Education</strong>
+                        Researching resource efficient, low footprint computing tools for interactive history education in schools with limited hardware.
+                    </li>
+                    <li class="p-4 rounded-lg bg-creamPaper border border-slate-200">
+                        <strong class="text-seaIndigo font-serif block mb-1">3. Regional Dialect Preservation</strong>
+                        Applying lightweight computational tools to record and map local Hainanese and Baba Malay linguistic variations in Melaka.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="lg:col-span-5 porcelain-card rounded-2xl p-6 sm:p-8 border-t-4 border-t-goldHighlight space-y-6">
+                <div class="flex items-center space-x-3">
+                    <span class="w-8 h-8 rounded bg-goldHighlight text-seaIndigo flex items-center justify-center font-bold text-sm">06</span>
+                    <h2 class="font-serif text-2xl font-bold text-seaIndigo">Certifications</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="p-4 rounded-lg bg-seaIndigo text-white border-l-4 border-goldHighlight">
+                        <div class="font-bold font-serif text-goldHighlight text-sm">JLPT N3 (Japanese Language Proficiency Test)</div>
+                        <div class="text-xs text-slate-300">Certified Passed</div>
+                    </div>
+
+                    <div class="p-4 rounded-lg bg-seaIndigo text-white border-l-4 border-terracottaTile">
+                        <div class="font-bold font-serif text-terracottaTile text-sm">Python for Data Science & Algorithmic Logic</div>
+                        <div class="text-xs text-slate-300">Completed Online Certification Coursework</div>
+                    </div>
+
+                    <div class="p-4 rounded-lg bg-seaIndigo text-white border-l-4 border-porcelainCyan">
+                        <div class="font-bold font-serif text-porcelainCyan text-sm">Malacca Heritage & Local History Studies</div>
+                        <div class="text-xs text-slate-300">Independent Research & Academic Documentation</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-16 tile-pattern text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-goldHighlight">Contact & Inquiries</h2>
+            <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto">
+                Feel free to reach out to me directly for academic collaborations, research opportunities, or code repositories.
+            </p>
+
+            <div class="p-8 dark-porcelain rounded-2xl border-2 border-goldHighlight/40 max-w-lg mx-auto space-y-4 shadow-2xl">
+                <div class="text-4xl text-terracottaTile">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                </div>
+                <div class="font-mono text-lg text-goldHighlight break-all">
+                    leeahkimixue@gmail.com
+                </div>
+                <div class="text-xs text-slate-400">
+                    Bandar Melaka, Malacca, Malaysia
+                </div>
+
+                <a href="mailto:leeahkimixue@gmail.com" class="inline-block px-8 py-3 bg-terracottaTile hover:bg-goldHover text-white font-bold rounded-lg transition-all shadow-md">
+                    Send Email Directly
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-teakWood text-slate-400 text-xs py-8 border-t border-goldHighlight/30 text-center">
+        <div class="max-w-7xl mx-auto px-4 space-y-2">
+            <p class="font-serif text-slate-300">Lee Ah Kim • Bandar Melaka • Computational History & Sustainable AI</p>
+            <p class="text-[11px] font-mono text-slate-500">
+                Built with Vanilla JS, HTML5 Canvas API, and Tailwind CSS. Low-carbon static site architecture.
+            </p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE HISTORICAL ENCOUNTERS GAME SCRIPT -->
+    <script>
+        // Mobile Navigation Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+        // HISTORICAL ENCOUNTERS DATA
+        const fleetData = {
+            ming: {
+                year: 'Year 1405 AD',
+                title: 'Arrival of Ming Dynasty Treasure Fleet',
+                tag: 'Arriving: Ming Treasure Fleet (China)',
+                desc: 'Over sixty massive multi deck Treasure Junks led by Admiral Zheng He anchor off Melaka. They carry imperial silk, celadon porcelain, and a royal yellow tablet from Emperor Yongle.',
+                quote: '"Lihatlah kapal besar dari Negeri China itu! Sultan sudah beri perintah untuk sambut pegawai Cheng Ho dengan penghormatan diraja."',
+                shipColor: '#D4AF37',
+                shipType: 'junk',
+                choices: [
+                    {
+                        title: 'Grant Exemption from Port Tariffs and Build Imperial Gudang (Warehouse)',
+                        desc: 'Offer imperial storehouses along Melaka riverbank to store Chinese silks and porcelain.',
+                        outcome: 'Sultan Parameswara accepts Ming vassal protectorate status. Melaka gains official naval protection against external regional threats, establishing Melaka as the premier Southeast Asian entrepôt.'
+                    },
+                    {
+                        title: 'Request Direct Exchange for Local Malacca Tin and Spices',
+                        desc: 'Arrange immediate trading between local Hainanese merchants and Ming officers.',
+                        outcome: 'Trade thrives instantly. Local Hainanese and Malay traders exchange thousands of tin ingots for high grade imperial porcelain, laying roots for early Chinese diaspora settlement.'
+                    }
+                ]
+            },
+            ryukyu: {
+                year: 'Year 1480 AD',
+                title: 'Ryukyu Kingdom Trading Mission (Okinawa)',
+                tag: 'Arriving: Ryukyu Kingdom Vessel (Japan / Okinawa)',
+                desc: 'An agile Japanese Ryukyuan trading ship arrives with official diplomatic letters from King Sho Shin. They bring Japanese iron swords, silver, porcelain, and sulfur.',
+                quote: '"Orang dari Ryukyu ini sangat tertib. Mereka bawa pedang besi tajam dan surat perak dari raja mereka di kepulauan utara."',
+                shipColor: '#008B8B',
+                shipType: 'ryukyu',
+                choices: [
+                    {
+                        title: 'Assign to the Shahbandar of the East and Exchange Malacca Tin',
+                        desc: 'Send the foreign envoys to the Chinese and Eastern Harbor Master for official registry.',
+                        outcome: 'Historical records in the Rekidai Hoan confirm that Ryukyu ships made over 150 official voyages to Melaka, exchanging Okinawan iron goods for Southeast Asian aromatic woods.'
+                    },
+                    {
+                        title: 'Host a Royal Feast at Bukit Cina',
+                        desc: 'Invite the Okinawan captains to meet local Hainanese interpreters.',
+                        outcome: 'Cultural goodwill is solidified. Melaka becomes Ryukyu Kingdom primary trading hub in Southern Seas for over a century.'
+                    }
+                ]
+            },
+            gujarat: {
+                year: 'Year 1500 AD',
+                title: 'Gujarati and Arab Spice Merchants',
+                tag: 'Arriving: Gujarati Dhow & Arab Merchant Vessels',
+                desc: 'A fleet of swift Dhows propelled by lateen sails enters Melaka river. They carry Indian printed textiles, perfumes, opium, and rose water to trade for Maluku cloves.',
+                quote: '"Saudagar Gujarat sudah tiba! Pasar Melaka akan penuh dengan kain tenunan cantik dan minyak wangi dari Barat."',
+                shipColor: '#C85A32',
+                shipType: 'dhow',
+                choices: [
+                    {
+                        title: 'Assign to Shahbandar Western Division and Issue License (Cap)',
+                        desc: 'Process trade paperwork under Bazaar Malay standard regulations.',
+                        outcome: 'Gujarati merchants form the wealthiest trading guild in Melaka town, filling warehouses with Cambay cloth and securing high tax revenues for the Sultanate treasury.'
+                    },
+                    {
+                        title: 'Facilitate Trade with Spice Merchants from Maluku',
+                        desc: 'Connect Gujarati buyers directly with spice traders from Eastern Archipelago.',
+                        outcome: 'Melaka solidifies its position where Eastern spices meet Western textiles. Over eighty languages are spoken daily along the riverfront.'
+                    }
+                ]
+            },
+            portuguese: {
+                year: 'Year 1509 AD',
+                title: 'First European Expedition (Diogo Lopes de Sequeira)',
+                tag: 'Arriving: Portuguese Galleons (Europe)',
+                desc: 'Five heavily armed Portuguese ships anchor off the coast. Captain Sequeira demands trading privileges, a permanent fortress site, and total tax exemption.',
+                quote: '"Kapal asing dari Franka ini membawa meriam besar. Hati-hati, niat mereka bukan sekadar berniaga biasa!"',
+                shipColor: '#94A3B8',
+                shipType: 'caravel',
+                choices: [
+                    {
+                        title: 'Welcome Officers Peacefully but Deny Permission for Fortification',
+                        desc: 'Allow basic trade exchange under standard port fees while restricting armed military troops.',
+                        outcome: 'Tensions flare as Portuguese captains survey the strait defenses. Local Tamil and Malay merchants advise the Bendahara to stay vigilant regarding foreign military intentions.'
+                    },
+                    {
+                        title: 'Consult Local Council and Shahbandars for Defensive Readiness',
+                        desc: 'Strengthen coastal watchtowers and demand Portuguese ship inspection.',
+                        outcome: 'Historical documentation records the initial fragile peace that preceded the 1511 conflict, highlighting the strategic military importance of Melaka Strait.'
+                    }
+                ]
+            }
+        };
+
+        let currentFleetKey = 'ming';
+
+        // CANVAS ANIMATION SETUP
+        const canvas = document.getElementById('encounterCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = canvas.parentElement.clientWidth;
+            canvas.height = canvas.parentElement.clientHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        let shipX = -80;
+        let animFrameId = null;
+
+        function renderScene() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Water Gradient
+            const waterGrad = ctx.createLinearGradient(0, 0, 0, canvas.height);
+            waterGrad.addColorStop(0, '#0D1B2A');
+            waterGrad.addColorStop(1, '#1B3B6F');
+            ctx.fillStyle = waterGrad;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Draw Melaka River Coastline on right
+            ctx.fillStyle = '#2C1A11';
+            ctx.fillRect(canvas.width - 70, 0, 70, canvas.height);
+
+            // Draw Coast Stilt Houses / Palisade
+            ctx.fillStyle = '#C85A32';
+            for (let y = 20; y < canvas.height; y += 40) {
+                ctx.fillRect(canvas.width - 65, y, 20, 15);
+            }
+
+            // Text Label Coast
+            ctx.fillStyle = '#D4AF37';
+            ctx.font = 'bold 10px Cinzel, serif';
+            ctx.fillText('MELAKA PORT', canvas.width - 65, 15);
+
+            // Waves animation
+            ctx.strokeStyle = 'rgba(212, 175, 55, 0.15)';
+            ctx.lineWidth = 1;
+            for (let i = 0; i < canvas.width - 70; i += 30) {
+                ctx.beginPath();
+                ctx.moveTo(i, (Math.sin(i + Date.now() * 0.003) * 5) + 100);
+                ctx.lineTo(i + 15, (Math.sin(i + Date.now() * 0.003) * 5) + 100);
+                ctx.stroke();
+            }
+
+            // Animate Ship Approaching
+            if (shipX < canvas.width - 150) {
+                shipX += 0.8;
+            }
+
+            const current = fleetData[currentFleetKey];
+            
+            // Draw Ship Body
+            ctx.fillStyle = current.shipColor;
+            ctx.beginPath();
+            ctx.ellipse(shipX, canvas.height / 2 + 10, 32, 14, 0, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.strokeStyle = '#D4AF37';
+            ctx.stroke();
+
+            // Draw Sails
+            ctx.fillStyle = '#FDFBF7';
+            ctx.beginPath();
+            ctx.moveTo(shipX - 10, canvas.height / 2 - 25);
+            ctx.lineTo(shipX + 15, canvas.height / 2 + 5);
+            ctx.lineTo(shipX - 15, canvas.height / 2 + 5);
+            ctx.fill();
+
+            animFrameId = requestAnimationFrame(renderScene);
+        }
+
+        function switchFleet(key) {
+            currentFleetKey = key;
+            const data = fleetData[key];
+
+            // Update Tab Active UI
+            document.querySelectorAll('.fleet-tab').forEach(tab => {
+                tab.classList.remove('active-tab', 'border-2', 'border-goldHighlight', 'bg-nyonyaBlue');
+                tab.classList.add('border', 'border-goldHighlight/30', 'bg-seaIndigo');
+            });
+            const activeBtn = document.getElementById(`tab-${key}`);
+            activeBtn.classList.add('active-tab', 'border-2', 'border-goldHighlight', 'bg-nyonyaBlue');
+
+            // Update Text Content
+            document.getElementById('canvasFleetTag').innerText = data.tag;
+            document.getElementById('encounterYear').innerText = data.year;
+            document.getElementById('encounterTitle').innerText = data.title;
+            document.getElementById('encounterDesc').innerText = data.desc;
+            document.getElementById('localDialectQuote').innerText = data.quote;
+
+            // Reset Outcome Box
+            document.getElementById('outcomeBox').classList.add('hidden');
+
+            // Render Choice Buttons
+            const container = document.getElementById('choiceContainer');
+            container.innerHTML = '';
+
+            data.choices.forEach((ch, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'w-full text-left p-3 rounded-lg bg-seaIndigo hover:bg-nyonyaBlue border border-goldHighlight/30 hover:border-goldHighlight transition-all space-y-1';
+                btn.onclick = () => showOutcome(ch.outcome);
+                btn.innerHTML = `
+                    <div class="font-serif font-bold text-goldHighlight text-xs flex items-center justify-between">
+                        <span>Action ${idx + 1}: ${ch.title}</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </div>
+                    <p class="text-[11px] text-slate-300">${ch.desc}</p>
+                `;
+                container.appendChild(btn);
+            });
+
+            // Reset Ship Canvas Animation
+            shipX = -80;
+        }
+
+        function showOutcome(text) {
+            const box = document.getElementById('outcomeBox');
+            document.getElementById('outcomeText').innerText = text;
+            box.classList.remove('hidden');
+        }
+
+        // Initialize First Tab
+        switchFleet('ming');
+        renderScene();
+    </script>
+</body>
+</html>
